@@ -7,7 +7,11 @@
  */
 $var = 0;
 // TODO votre code ici.
-
+if (empty($var)){
+    echo "var est vide";
+}else{
+    echo "var est pas vide";
+}
 
 
 
@@ -16,22 +20,23 @@ $var = 0;
  */
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
-
+unset($eraseMe);
+print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
-
+$array = ["valeur1","valeur2","valeur3","valeur4"];
 echo "<br>";
+var_dump($array);
 
 /**
  * 4. Faites la même chose avec le même tableau, mais pour la méthode print_r.
  */
 // TODO votre code ici.
-
 echo "<br>";
-
+print_r($array);
 
 /**
  * 5. A l'aide de la méthode isset, testez si la clé du tableau associatif 'doNotExists' existe ( SANS TOUCHER AU TABLEAU )
@@ -39,7 +44,13 @@ echo "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
+echo "<br> ";
 
+if (array_key_exists("doNotExist",$tab)){
+    echo "existe<br>";
+}else{
+    echo "existe pas<br>";
+}
 
 /**
  * 6. Créez une variable contenant:
@@ -63,3 +74,28 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+
+$boolean = true;
+$intNb = 1;
+$float = 1.1;
+$string = "string";
+
+function getVarType($p1){
+    if (is_bool($p1)){
+        echo "Ma variable est de type : BOOLEAN <br>";
+    }
+    else if(is_int($p1)){
+        echo "Ma variable est de type : ENTIER <br>";
+    }
+    else if(is_float($p1)){
+        echo "Ma variable est de type : FLOTTANT <br>";
+    }
+    else if(is_string($p1)){
+        echo "Ma variable est de type : STRING <br>";
+    }
+}
+
+getVarType($boolean);
+getVarType($intNb);
+getVarType($float);
+getVarType($string);
